@@ -1,0 +1,10 @@
+*.iml
+.idea/
+.eclipse
+.settings/
+.classpath
+.gradle/
+build/
+.gems/
+.DS_Store
+.sass-cache/

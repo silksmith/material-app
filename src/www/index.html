@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport"
+          content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body ng-app="app" ng-controller="AppController">
+
+<div layout="column" layout-fill>
+
+
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+                    md-component-id="left" md-is-locked-open="$media('gt-sm')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            </md-toolbar>
+            <md-content class="md-padding">
+                <md-button ng-click="closeLeft()" class="md-primary" hide-gt-md>
+                    X
+                </md-button>
+                <p hide show-gt-md>
+                    This sidenav is locked open on your device. To go back to
+                    the default behavior,
+                    narrow your display.
+                </p>
+            </md-content>
+        </md-sidenav>
+        <div layout="column" layout-fill>
+
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <span>My App's Title</span>
+                    <!-- fill up the space between left and right area -->
+                    <span flex></span>
+
+                </div>
+            </md-toolbar>
+            <md-content flex class="md-padding">
+                <md-list>
+                    <md-item ng-repeat="item in todos">
+                        <md-item-content>
+                            <div class="md-tile-left">
+                                <img ng-src="{{item.face}}" class="face"
+                                     alt="{{item.who}}">
+                            </div>
+                            <div class="md-tile-content">
+                                <h3>{{item.what}}</h3>
+                                <h4>{{item.who}}</h4>
+
+                                <p>
+                                    {{item.notes}}
+                                </p>
+                            </div>
+                        </md-item-content>
+                    </md-item>
+                </md-list>
+            </md-content>
+        </div>
+    </section>
+</div>
+<script src="/material-app.js"></script>
+
+</body>
+</html>
